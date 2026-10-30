@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HTML5 Input Attributes and Restrictions</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; line-height: 1.6; }
+        .form-group { margin-bottom: 12px; }
+        label { display: inline-block; width: 220px; font-weight: bold; }
+        fieldset { margin-bottom: 20px; padding: 15px; border-radius: 6px; }
+        legend { font-weight: bold; color: #2c3e50; }
+    </style>
+</head>
+<body>
+
+    <h2>HTML5 Forms, Input Attributes & Restrictions</h2>
+
+    <form action="#" method="get">
+        
+        <fieldset>
+            <legend>1. Standard Input Types</legend>
+            
+            <div class="form-group">
+                <label for="txt">type="text":</label>
+                <input type="text" id="txt" name="username" placeholder="Enter username">
+            </div>
+
+            <div class="form-group">
+                <label for="pwd">type="password":</label>
+                <input type="password" id="pwd" name="password" placeholder="Enter password">
+            </div>
+
+            <div class="form-group">
+                <label>type="radio":</label>
+                <input type="radio" id="gender_m" name="gender" value="male"> <label for="gender_m" style="width:auto;">Male</label>
+                <input type="radio" id="gender_f" name="gender" value="female"> <label for="gender_f" style="width:auto;">Female</label>
+            </div>
+
+            <div class="form-group">
+                <label>type="checkbox":</label>
+                <input type="checkbox" id="terms" name="terms" value="accepted"> <label for="terms" style="width:auto;">I agree to the terms</label>
+            </div>
+
+            <div class="form-group">
+                <label>Buttons:</label>
+                <input type="button" value="type='button'" onclick="alert('Button clicked!')">
+                <input type="reset" value="type='reset'">
+                <input type="submit" value="type='submit'">
+            </div>
+        </fieldset>
+
+        <fieldset>
+            <legend>2. HTML5 Input Types</legend>
+            
+            <div class="form-group">
+                <label for="num">type="number":</label>
+                <input type="number" id="num" name="age">
+            </div>
+
+            <div class="form-group">
+                <label for="rng">type="range":</label>
+                <input type="range" id="rng" name="volume" min="0" max="100">
+            </div>
+
+            <div class="form-group">
+                <label for="clr">type="color":</label>
+                <input type="color" id="clr" name="favcolor" value="#007bff">
+            </div>
+
+            <div class="form-group">
+                <label for="dt">type="date":</label>
+                <input type="date" id="dt" name="dob">
+            </div>
+
+            <div class="form-group">
+                <label for="tm">type="time":</label>
+                <input type="time" id="tm" name="appointment">
+            </div>
+
+            <div class="form-group">
+                <label for="mnth">type="month":</label>
+                <input type="month" id="mnth" name="startmonth">
+            </div>
+
+            <div class="form-group">
+                <label for="wk">type="week":</label>
+                <input type="week" id="wk" name="workweek">
+            </div>
+
+            <div class="form-group">
+                <label for="eml">type="email":</label>
+                <input type="email" id="eml" name="email" placeholder="user@example.com">
+            </div>
+
+            <div class="form-group">
+                <label for="fl">type="file":</label>
+                <input type="file" id="fl" name="profile_pic">
+            </div>
+        </fieldset>
+
+    
+        <fieldset>
+            <legend>3. Input Restrictions</legend>
+
+            <div class="form-group">
+                <label for="req">required:</label>
+                <input type="text" id="req" name="mandatory" required placeholder="Mandatory field">
+            </div>
+
+            <div class="form-group">
+                <label for="ro">readonly & value:</label>
+                <input type="text" id="ro" name="fixed_id" value="REG-10029" readonly>
+            </div>
+
+            <div class="form-group">
+                <label for="dis">disabled:</label>
+                <input type="text" id="dis" name="inactive" value="Cannot edit or submit" disabled>
+            </div>
+
+            <div class="form-group">
+                <label for="minmax">min & max (10 to 50):</label>
+                <input type="number" id="minmax" name="score" min="10" max="50" placeholder="10 - 50">
+            </div>
+
+            <div class="form-group">
+                <label for="maxlen">maxlength (Max 5 chars):</label>
+                <input type="text" id="maxlen" name="pincode" maxlength="5" placeholder="Max 5 chars">
+            </div>
+
+            <div class="form-group">
+                <label for="sz">size (Width = 40):</label>
+                <input type="text" id="sz" name="custom_width" size="40" placeholder="Size is set to 40 characters wide">
+            </div>
+        </fieldset>
+    </form>
+
+    <fieldset>
+        <legend>4. Target Attribute</legend>
+        <p><a href="https://www.google.com" target="_blank">Open Google in New Tab</a></p>
+        <p><a href="https://www.google.com" target="_self">Open Google in Same Frame</a></p>
+    </fieldset>
+
+    <fieldset>
+        <legend>5. I-frame and Marquee</legend>
+        
+        <marquee behavior="scroll" direction="left" scrollamount="6" style="background: #eef2f7; padding: 8px; font-weight: bold; color: #333;">
+            Welcome to UI Technologies - HTML5, CSS3, and JavaScript assignments!
+        </marquee>
+
+        <h4 style="margin-top: 15px;">Embedded I-frame:</h4>
+        <iframe src="01-basics.html" width="100%" height="250" style="border: 1px solid #aaa;" title="Basics Page Iframe"></iframe>
+    </fieldset>
+
+</body>
+</html>

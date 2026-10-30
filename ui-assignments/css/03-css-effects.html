@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CSS Effects Assignment</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; line-height: 1.6; }
+        .section-card {
+            border: 1px solid #ddd;
+            padding: 15px;
+            margin-bottom: 25px;
+            border-radius: 6px;
+        }
+
+        /* 1. CSS Box Shadow on Image & Hover Cursor */
+        .shadow-box {
+            display: inline-block;
+            padding: 10px;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.15); /* Default shadow */
+            transition: all 0.3s ease;
+            cursor: pointer; /* Cursor change */
+        }
+        .shadow-box:hover {
+            box-shadow: 0 12px 24px rgba(0,0,0,0.35); /* Elevated shadow on hover */
+            transform: translateY(-4px);
+        }
+
+        /* 2. CSS Animations */
+        @keyframes pulseColor {
+            0% { transform: scale(1); background-color: #3498db; }
+            50% { transform: scale(1.08); background-color: #e74c3c; }
+            100% { transform: scale(1); background-color: #3498db; }
+        }
+
+        .animated-box {
+            width: 140px;
+            height: 60px;
+            line-height: 60px;
+            text-align: center;
+            color: #fff;
+            font-weight: bold;
+            border-radius: 6px;
+            /* Animation properties */
+            animation-name: pulseColor;
+            animation-duration: 5s;
+            animation-iteration-count: infinite;
+            animation-delay: 0.5s;
+        }
+
+        /* Pagination with & without spaces */
+        .pagination { display: inline-block; margin: 10px 0; }
+        .pagination a {
+            color: black;
+            padding: 8px 14px;
+            text-decoration: none;
+            border: 1px solid #ddd;
+            transition: background-color 0.2s;
+        }
+        .pagination a:hover {
+            background-color: #007bff;
+            color: white;
+        }
+        .pagination.with-spaces a {
+            margin: 0 4px; /* With spaces */
+            border-radius: 4px;
+        }
+        .pagination.without-spaces a {
+            margin: 0;     /* Without spaces */
+            float: left;
+            border-right: none;
+        }
+        .pagination.without-spaces a:last-child {
+            border-right: 1px solid #ddd;
+        }
+
+        /* 3. CSS Positions */
+        .pos-container {
+            position: relative; /* Relative container for absolute children */
+            height: 160px;
+            background: #f8f9fa;
+            border: 1px solid #ced4da;
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+        .pos-static {
+            position: static;
+            background: #e2e3e5;
+            padding: 5px;
+        }
+        .pos-relative {
+            position: relative;
+            top: 10px;
+            left: 20px;
+            background: #cce5ff;
+            padding: 5px;
+        }
+        .pos-absolute {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            background: #d4edda;
+            padding: 5px;
+        }
+        .pos-sticky {
+            position: sticky;
+            top: 0;
+            background: #fff3cd;
+            padding: 8px;
+            border: 1px solid #ffeeba;
+            font-weight: bold;
+            z-index: 10;
+        }
+
+        /* 4. Handling Overflow using scroll */
+        .overflow-scroll-box {
+            width: 320px;
+            height: 100px;
+            border: 2px solid #6c757d;
+            overflow: scroll; /*Forces scrollbars*/
+            padding: 8px;
+            background: #fff;
+        }
+
+        /* 5. Opacity on Image */
+        .img-opacity {
+            opacity: 0.5; /* Default 50% opacity */
+            transition: opacity 0.3s ease;
+        }
+        .img-opacity:hover {
+            opacity: 1.0; /* Full opacity on hover */
+        }
+    </style>
+</head>
+<body>
+
+    <div class="pos-sticky">Sticky Header: I stick to the top as you scroll this section!</div>
+
+    <h2>CSS Effects Assignment</h2>
+
+    <!-- 1. Shadow effects & cursor -->
+    <div class="section-card">
+        <h3>1. Box Shadow on Image & Cursor Hover</h3>
+        <div class="shadow-box">
+            <img src="https://via.placeholder.com/200x120/007bff/ffffff?text=Hover+Me" alt="Sample" style="display:block;">
+        </div>
+    </div>
+
+    <!-- 2. Animations & Paginations -->
+    <div class="section-card">
+        <h3>2. CSS Animations & Paginations</h3>
+        <div class="animated-box">Pulsing Box</div>
+
+        <h4>Hoverable Pagination (With spaces):</h4>
+        <div class="pagination with-spaces">
+            <a href="#">&laquo;</a>
+            <a href="#">1</a>
+            <a href="#">2</a>
+            <a href="#">3</a>
+            <a href="#">&raquo;</a>
+        </div>
+
+        <h4>Hoverable Pagination (Without spaces):</h4>
+        <div style="overflow: hidden;">
+            <div class="pagination without-spaces">
+                <a href="#">&laquo;</a>
+                <a href="#">1</a>
+                <a href="#">2</a>
+                <a href="#">3</a>
+                <a href="#">&raquo;</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- 3. Positioning -->
+    <div class="section-card">
+        <h3>3. Positions (static, relative, absolute, sticky)</h3>
+        <div class="pos-container">
+            <div class="pos-static">Static element (normal document flow)</div>
+            <div class="pos-relative">Relative element (offset top:10px, left:20px)</div>
+            <div class="pos-absolute">Absolute element (bottom:10px, right:10px)</div>
+        </div>
+    </div>
+
+    <!-- 4. Overflow using scroll -->
+    <div class="section-card">
+        <h3>4. Overflow Handling using scroll</h3>
+        <div class="overflow-scroll-box">
+            This box has fixed height and width with <code>overflow: scroll</code>.
+            Line 1: Web development fundamentals.<br>
+            Line 2: Overflow content scrolls smoothly.<br>
+            Line 3: Extra content keeps flowing.<br>
+            Line 4: End of scroll demo.
+        </div>
+    </div>
+
+    <!-- 5. Opacity -->
+    <div class="section-card">
+        <h3>5. Image Opacity (0.5 to 1.0 on Hover)</h3>
+        <img class="img-opacity" src="https://via.placeholder.com/220x100/28a745/ffffff?text=Opacity+Hover" alt="Opacity Demo">
+    </div>
+
+</body>
+</html>

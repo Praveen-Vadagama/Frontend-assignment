@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CSS Basics Assignment</title>
+    <!-- Question 2: Link to external stylesheet if needed; inline block used here for self-contained execution -->
+    <style>
+        /* =========================================
+           1. CSS Comments: This is a CSS comment block
+           ========================================= */
+
+        /* 2. Background color, fixed background image, and sizing */
+        body {
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f6f9;
+            /* Using a clean subtle geometric SVG as fixed background */
+            background-image: url('https://images.unsplash.com/photo-1579546929518-9e396f3cc809?w=1200&q=80');
+            background-repeat: no-repeat;
+            background-attachment: fixed; /* Image does not scroll with page */
+            background-size: cover;       /* Specific background size */
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            background-color: rgba(255, 255, 255, 0.92);
+            padding: 20px;
+            border-radius: 8px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        /* 3. Width, style, and color for 4 border-styles (different on each side) */
+        .custom-border-box {
+            margin: 20px 0;
+            padding: 15px;
+            background-color: #fff;
+            
+            /* Border widths */
+            border-top-width: 4px;
+            border-right-width: 6px;
+            border-bottom-width: 8px;
+            border-left-width: 10px;
+
+            /* Border styles */
+            border-top-style: solid;
+            border-right-style: dashed;
+            border-bottom-style: double;
+            border-left-style: dotted;
+
+            /* Border colors */
+            border-top-color: #e74c3c;    /* Red */
+            border-right-color: #3498db;  /* Blue */
+            border-bottom-color: #2ecc71; /* Green */
+            border-left-color: #f39c12;   /* Orange */
+        }
+
+        /* 4. Height and width in pixels (px) vs percentage (%) */
+        .box-pixels {
+            width: 350px;       /* Fixed in pixels */
+            height: 100px;      /* Fixed in pixels */
+            background-color: #d1ecf1;
+            border: 1px solid #bee5eb;
+            margin-bottom: 15px;
+            padding: 10px;
+        }
+
+        .box-percentage {
+            width: 75%;         /* Relative percentage */
+            height: 120px;
+            background-color: #d4edda;
+            border: 1px solid #c3e6cb;
+            margin-bottom: 15px;
+            padding: 10px;
+        }
+
+        /* 5. Font styles, font-size, font-family, colors, and text-align */
+        .typography-sample-1 {
+            font-family: "Georgia", serif;
+            font-size: 22px;
+            font-style: italic;
+            color: #8e44ad;
+            text-align: left;
+        }
+
+        .typography-sample-2 {
+            font-family: "Courier New", monospace;
+            font-size: 16px;
+            font-style: normal;
+            font-weight: bold;
+            color: #d35400;
+            text-align: center;
+        }
+
+        .typography-sample-3 {
+            font-family: "Trebuchet MS", sans-serif;
+            font-size: 18px;
+            font-style: oblique;
+            color: #16a085;
+            text-align: right;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>CSS Basics Assignment</h1>
+
+        <!-- Question 3 -->
+        <h3>Question 3: Four Different Borders (Width, Style, Color per Side)</h3>
+        <div class="custom-border-box">
+            Top: Solid (Red) | Right: Dashed (Blue) | Bottom: Double (Green) | Left: Dotted (Orange)
+        </div>
+
+        <!-- Question 4 -->
+        <h3>Question 4: Height & Width (px vs %)</h3>
+        <div class="box-pixels">
+            <strong>Fixed Dimensions:</strong> width: 350px, height: 100px
+        </div>
+        <div class="box-percentage">
+            <strong>Percentage Width:</strong> width: 75%, height: 120px
+        </div>
+
+        <!-- Question 5 -->
+        <h3>Question 5: Font Styles, Sizes, Colors & Text Alignments</h3>
+        <p class="typography-sample-1">Sample 1: Georgia, Italic, 22px, Purple, Left Aligned</p>
+        <p class="typography-sample-2">Sample 2: Courier New, Bold, 16px, Rust Orange, Center Aligned</p>
+        <p class="typography-sample-3">Sample 3: Trebuchet MS, Oblique, 18px, Teal, Right Aligned</p>
+    </div>
+
+</body>
+</html>

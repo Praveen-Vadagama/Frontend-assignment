@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CSS Page Adjustments</title>
+    <style>
+        /* 3. Smooth scrolling behavior */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            transition: background-color 0.4s ease;
+        }
+
+        /* 1. Black border for table, hover on table changes page background color */
+        body:has(#hoverTable:hover) {
+            background-color: #ffeaa7; /* Changes page color on table hover */
+        }
+
+        table {
+            border: 2px solid black; /* Black border */
+            border-collapse: collapse;
+            width: 80%;
+            margin: 20px 0;
+            background-color: #fff;
+        }
+
+        th, td {
+            border: 2px solid black;
+            padding: 10px;
+            text-align: left;
+        }
+
+        /* 2. Visibility and Display types */
+        .box {
+            padding: 12px;
+            margin: 10px 0;
+            border: 1px solid #333;
+            background-color: #dfe6e9;
+        }
+        .vis-hidden { visibility: hidden; }
+        .vis-visible { visibility: visible; }
+        .vis-collapse { visibility: collapse; }
+
+        .disp-none { display: none; }
+        .disp-inline { display: inline; background: #ffeaa7; padding: 4px; }
+        .disp-block { display: block; background: #74b9ff; margin: 5px 0; }
+        .disp-contents { display: contents; }
+        .disp-list-item { display: list-item; margin-left: 20px; }
+
+        /* 4. Padding vs Margin */
+        .box-spacing {
+            border: 2px solid #e17055;
+            background-color: #fab1a0;
+            padding: 25px; /* Inner spacing between content and border */
+            margin: 30px 10px; /* Outer spacing outside the border */
+        }
+
+        /* 5. Multiple background images with adjustable sizes */
+        .multi-bg-element {
+            width: 100%;
+            height: 180px;
+            border: 2px dashed #0984e3;
+            /* Two background layers */
+            background-image: 
+                url('https://cdn-icons-png.flaticon.com/512/1051/1051277.png'),
+                linear-gradient(to right, #74b9ff, #a29bfe);
+            background-repeat: no-repeat, no-repeat;
+            background-position: right 20px center, center;
+            background-size: 80px 80px, cover; /* Adjustable sizes for each layer */
+            color: #fff;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        .nav-link {
+            display: inline-block;
+            padding: 8px 16px;
+            background: #2d3436;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 4px;
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body id="pageTop">
+
+    <!-- 3. Link to go to bottom -->
+    <a href="#pageBottom" class="nav-link">Click to go to bottom of page</a>
+
+    <h2>1. Table with Black Border (Hover to change Page Background)</h2>
+    <p>Hover over the table below; the body background color will dynamically switch.</p>
+    <table id="hoverTable">
+        <thead>
+            <tr><th>Tech</th><th>Role</th><th>Status</th></tr>
+        </thead>
+        <tbody>
+            <tr><td>HTML5</td><td>Structure</td><td>Active</td></tr>
+            <tr><td>CSS3</td><td>Presentation</td><td>Active</td></tr>
+            <tr><td>JavaScript</td><td>Logic</td><td>Active</td></tr>
+        </tbody>
+    </table>
+
+    <hr>
+
+    <h2>2. Visibility vs Display Demonstrations</h2>
+    <div class="box">Normal Box Above</div>
+    <div class="box vis-hidden">Element with <code>visibility: hidden</code> (Space is preserved!)</div>
+    <div class="box">Normal Box Below Hidden Element</div>
+
+    <div class="box disp-none">Element with <code>display: none</code> (Completely gone from document flow)</div>
+    
+    <div>
+        <span>Span 1</span>
+        <span class="disp-block">Span transformed to <code>display: block</code></span>
+        <div class="disp-inline">Div transformed to <code>display: inline</code></div>
+    </div>
+    <div class="disp-list-item">Element styled as <code>display: list-item</code></div>
+
+    <hr>
+
+    <h2>4. Padding and Margin Demonstration</h2>
+    <div style="background-color: #636e72; padding: 1px;">
+        <div class="box-spacing">
+            <strong>Margin vs Padding:</strong><br>
+            Orange area is element content + 25px <strong>Padding</strong>.<br>
+            The gap between this container and the grey container is 30px <strong>Margin</strong>.
+        </div>
+    </div>
+
+    <hr>
+
+    <h2>5. Multiple Background Images with Adjustable Sizes</h2>
+    <div class="multi-bg-element">
+        <h3>Element with Multi-layered Background</h3>
+        <p>Layer 1: HTML5 icon (80px &times; 80px) on right side.</p>
+        <p>Layer 2: Linear gradient (cover size) as base layer.</p>
+    </div>
+
+    <!-- Extra space to demonstrate smooth scroll -->
+    <div style="height: 600px; padding: 20px; background: #f1f2f6; margin: 30px 0;">
+        <p>Scroll spacer section...</p>
+    </div>
+
+    <!-- 3. Bottom of page marker & link to top -->
+    <div id="pageBottom" style="padding: 20px; background: #dfe4ea;">
+        <h3>Bottom of Page Reached</h3>
+        <a href="#pageTop" class="nav-link">Click to go to top of page</a>
+    </div>
+
+</body>
+</html>

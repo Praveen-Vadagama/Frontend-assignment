@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript Access and Properties Assignment</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; line-height: 1.6; }
+        .card { border: 1px solid #ddd; padding: 15px; margin-bottom: 15px; border-radius: 6px; }
+        button { padding: 6px 14px; cursor: pointer; }
+        pre { background: #f8f9fa; padding: 10px; border-radius: 4px; }
+        .count-badge { font-size: 20px; font-weight: bold; color: #007bff; margin-left: 10px; }
+    </style>
+</head>
+<body>
+
+    <h1>JavaScript Access and Properties</h1>
+
+    <!-- 1. 'this' keyword to disappear button -->
+    <div class="card">
+        <h3>1. Disappearing Button using <code>this</code> keyword</h3>
+        <p>Click the button below; it will disappear using <code>this.style.display = 'none'</code>.</p>
+        <button onclick="hideMe(this)">Click to make me disappear</button>
+        <button onclick="location.reload()" style="margin-left: 10px;">Reset Page</button>
+    </div>
+
+    <!-- 2. call() vs apply() -->
+    <div class="card">
+        <h3>2. Function Invocation using <code>call()</code> and <code>apply()</code></h3>
+        <button id="callApplyBtn">Invoke with call() and apply()</button>
+        <pre id="callApplyOutput"></pre>
+    </div>
+
+    <!-- 3. Counter program -->
+    <div class="card">
+        <h3>3. Standard Counter Program</h3>
+        <button id="counterBtn">Count</button>
+        <span class="count-badge" id="counterValue">0</span>
+    </div>
+
+    <!-- 4. Counter with getter and setter accessors -->
+    <div class="card">
+        <h3>4. Counter using Getter and Setter Accessors</h3>
+        <button id="getterSetterIncBtn">Increment (Set)</button>
+        <button id="getterSetterGetBtn">Read (Get)</button>
+        <button id="getterSetterResetBtn">Reset</button>
+        <p>Current Counter Value via Getter: <span class="count-badge" id="getterSetterDisplay">0</span></p>
+    </div>
+
+    <!-- 5. Prototype property extension -->
+    <div class="card">
+        <h3>5. Object Prototype Extension</h3>
+        <button id="protoBtn">Call Prototype Methods</button>
+        <pre id="protoOutput"></pre>
+    </div>
+
+    <script src="02-access-and-properties.js"></script>
+</body>
+</html>

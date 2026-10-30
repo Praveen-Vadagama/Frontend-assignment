@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HTML5 Basics Assignment</title>
+    <style>
+        a:hover {
+            color: red;
+        }
+        input:focus {
+            background-color: #f0f8ff;
+            outline: 2px solid #007bff;
+        }
+        li:first-child {
+            font-weight: bold;
+        }
+        p::first-letter {
+            font-size: 150%;
+            color: darkblue;
+        }
+        p::selection {
+            background-color: yellow;
+        }
+        
+        .box {
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+        }
+        .highlight {
+            color: crimson;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+  
+    <nav>
+        <a href="#section-heading">Go to Headings</a> |
+        <a href="#section-text">Go to Text Formatting</a> |
+        <a href="#section-lists">Go to Lists</a> |
+        <a href="#section-footer">Go to Footer Section</a>
+    </nav>
+    <hr>
+    <div id="section-heading" class="box">
+        <h1>Heading Level 1</h1>
+        <h2>Heading Level 2</h2>
+        <h3>Heading Level 3</h3>
+    </div>
+
+    
+    <div id="section-text" class="box">
+        <p>This is a standard paragraph demonstrating text tags. Inside this paragraph, we have <b>bold text</b> and <i>italicized text</i>.</p>
+        <p>Here is an example using a <span>span tag</span> with a class to make text <span class="highlight">highlighted</span> inline without creating a new block line.</p>
+        
+        <label for="sample-input">Sample Input (Click to focus):</label>
+        <input type="text" id="sample-input" placeholder="Type here...">
+    </div>
+
+    
+    <div class="box">
+        <p>Below is a blockquote quotation:</p>
+        <blockquote>
+            "Learning web development with clean HTML structure is fundamental for modern software engineering."
+        </blockquote>
+        <hr>
+    </div>
+
+    <div id="section-lists" class="box">
+        <h3>Core Web Technologies</h3>
+        <ul>
+            <li>HTML5</li>
+            <li>CSS3 - Styling and layout presentation</li>
+            <li>JavaScript - Dynamic behavior and interactivity</li>
+        </ul>
+    </div>
+
+
+    <div class="box">
+        <h3>Image</h3>
+        <img src="https://via.placeholder.com/200x80?text=HTML5+Logo" alt="Sample Placeholder Image" width="200" height="80">
+    </div>
+
+    <div id="section-footer" class="box" style="margin-top: 50px; background-color: #f9f9f9;">
+        <h3>Footer / Target Section</h3>
+        <p>You have navigated down to this section using in-page anchor links.</p>
+        <a href="#top">Back to top</a>
+    </div>
+
+</body>
+</html>
